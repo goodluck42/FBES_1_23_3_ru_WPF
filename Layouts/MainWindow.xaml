@@ -1,0 +1,102 @@
+﻿<Window x:Class="Layouts.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Layouts"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        FontSize="30"
+        FontFamily="Tahoma"
+        MinHeight="300"
+        MinWidth="400"
+        ResizeMode="CanResize"
+        Loaded="MainWindow_OnLoaded">
+    <Grid ShowGridLines="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="4*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="4*" />
+        </Grid.ColumnDefinitions>
+        <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
+                BorderThickness="2" BorderBrush="Aqua" Background="#b51690" CornerRadius="10 20 30 40">
+            <TextBlock
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontSize="18"
+               
+                x:Name="MyTextBlock"
+                Foreground="#ffffff">
+                R0C0
+            </TextBlock>
+        </Border>
+        <TextBlock Grid.Row="2"
+                   Grid.Column="2">
+            R2C2
+        </TextBlock>
+        <Button Grid.Row="1"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Content="R1C1"
+                Click="ButtonBase_OnClick"
+                Margin="10 20 30 40"
+                BorderBrush="Red"/>
+        <ListBox Grid.Row="2" Grid.Column="0" x:Name="NamesListBox" />
+        <Grid Grid.Row="1" Grid.Column="0" ShowGridLines="True">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+        </Grid>
+    </Grid>
+    <!-- !!!!!!!!!!!!!!!! -->
+    <!-- <UniformGrid> -->
+    <!--     <TextBlock>1</TextBlock> -->
+    <!--     <TextBlock>2</TextBlock> -->
+    <!--     <TextBlock>3</TextBlock> -->
+    <!--     <TextBlock>4</TextBlock> -->
+    <!--     <TextBlock>5</TextBlock> -->
+    <!--     <TextBlock>6</TextBlock> -->
+    <!--     <TextBlock>7</TextBlock> -->
+    <!-- </UniformGrid> -->
+    <!-- !!!!!!!!!!!!!!!! -->
+    <!-- <StackPanel Orientation="Vertical" Width="100" Height="500"> -->
+    <!--     <TextBlock>Text1</TextBlock> -->
+    <!--     <Button>Text2</Button> -->
+    <!--     <TextBlock>Text3</TextBlock> -->
+    <!--     <Button>Text4</Button> -->
+    <!-- </StackPanel> -->
+    <!-- !!!!!!!!!!!!!!!! -->
+    <!-- <WrapPanel Orientation="Vertical"> -->
+    <!--     <TextBlock>Text1</TextBlock> -->
+    <!--     <TextBlock>Text2</TextBlock> -->
+    <!--     <TextBlock>Text3</TextBlock> -->
+    <!--     <TextBlock>Text4</TextBlock> -->
+    <!--     <TextBlock>Text5</TextBlock> -->
+    <!--     <TextBlock>Text6</TextBlock> -->
+    <!-- </WrapPanel> -->
+    <!-- !!!!!!!!!!!!!!!! -->
+    <!-- <DockPanel> -->
+    <!--     <Button DockPanel.Dock="Left">1</Button> -->
+    <!--     <Button DockPanel.Dock="Right">2</Button> -->
+    <!--     <Button DockPanel.Dock="Bottom">3</Button> -->
+    <!--     <Button DockPanel.Dock="Top">4</Button> -->
+    <!-- </DockPanel> -->
+    <!-- !!!!!!!!!!!!!!!! -->
+    <!-- <Canvas> -->
+    <!--     <Rectangle Width="500" Height="300" Fill="DarkGreen" Canvas.Bottom="10" Canvas.Left="50"></Rectangle> -->
+    <!--     <Ellipse Width="150" Height="150" Fill="Red" Canvas.Bottom="85" Canvas.Left="225"></Ellipse> -->
+    <!--     <TextBlock Canvas.Left="225" Canvas.Bottom="90">Flag</TextBlock> -->
+    <!-- </Canvas> -->
+</Window>
