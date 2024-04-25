@@ -37,7 +37,7 @@
         </Border>
         <TextBlock Grid.Row="2"
                    Grid.Column="2">
-            R2C2
+            R2<LineBreak/>C2&gt;
         </TextBlock>
         <Button Grid.Row="1"
                 Grid.Column="1"
