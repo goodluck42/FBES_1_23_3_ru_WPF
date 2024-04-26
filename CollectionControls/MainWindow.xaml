@@ -1,0 +1,62 @@
+﻿<Window x:Class="CollectionControls.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CollectionControls"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Height="450"
+        Width="800"
+        d:DataContext="{d:DesignInstance Type=local:MainWindow, IsDesignTimeCreatable=True}">
+    <Window.Resources>
+        <local:Vehicle x:Key="DefaultVehicle" Id="0" Model="A5" Name="Audi"></local:Vehicle>
+    </Window.Resources>
+    <!-- <WrapPanel> -->
+    <!--     ~1~ <TextBlock Text="{Binding Width}"/> @1@ -->
+    <!--     ~1~ <TextBlock Text="X"></TextBlock> @1@ -->
+    <!--     ~1~ <TextBlock Text="{Binding Height}"/> @1@ -->
+    <!--     <TextBlock Width="100" Text="{Binding DataVehicle.Name}"></TextBlock> -->
+    <!--     <TextBox Width="100" Text="{Binding DataVehicle.Name, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" /> -->
+    <!--     <Button Click="ButtonBase_OnClick" Content="Change Value"/> -->
+    <!-- </WrapPanel> -->
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <ListBox Grid.Row="0" Grid.Column="0" ItemsSource="{Binding Vehicles}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Model}" />
+                        <TextBlock Text="{Binding Name}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        
+        <StackPanel Grid.Row="0" Grid.Column="1">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Id: "/>
+                <TextBox Width="100" Text="{Binding NewVehicle.Id}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Name: "/>
+                <TextBox Width="100" Text="{Binding NewVehicle.Name}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Model: "/>
+                <TextBox Width="100" Text="{Binding NewVehicle.Model}" />
+            </StackPanel>
+            <Button Content="Add" Click="AddVehicle"/>
+        </StackPanel>
+    </Grid>
+</Window>
