@@ -10,7 +10,7 @@
         Width="800"
         d:DataContext="{d:DesignInstance Type=local:MainWindow, IsDesignTimeCreatable=True}">
     <Window.Resources>
-        <local:Vehicle x:Key="DefaultVehicle" Id="0" Model="A5" Name="Audi"></local:Vehicle>
+        
     </Window.Resources>
     <!-- <WrapPanel> -->
     <!--     ~1~ <TextBlock Text="{Binding Width}"/> @1@ -->
@@ -21,7 +21,7 @@
     <!--     <Button Click="ButtonBase_OnClick" Content="Change Value"/> -->
     <!-- </WrapPanel> -->
     
-    <Grid>
+    <Grid x:Name="MyGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition />
@@ -36,7 +36,10 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Id}" />
+                        <TextBlock Text=" "/>
                         <TextBlock Text="{Binding Model}" />
+                        <TextBlock Text=" "/>
                         <TextBlock Text="{Binding Name}" />
                     </StackPanel>
                 </DataTemplate>
@@ -56,7 +59,21 @@
                 <TextBlock Text="Model: "/>
                 <TextBox Width="100" Text="{Binding NewVehicle.Model}" />
             </StackPanel>
-            <Button Content="Add" Click="AddVehicle"/>
+            <Button Content="Add" Click="AddVehicle" />
         </StackPanel>
+        
+        <!-- <ListView Grid.Row="1" Grid.Column="0"> -->
+        <!--     <ListView.View> -->
+        <!--         <GridView /> -->
+        <!--     </ListView.View> -->
+        <!-- </ListView> -->
+        
+        <DataGrid Grid.Row="1" Grid.Column="0">
+            <DataGridColumnHeader Content="Column1" />
+            <DataGridColumnHeader Content="Column2" />
+            <DataGridColumnHeader Content="Column3" />
+        </DataGrid>
+        
+        
     </Grid>
 </Window>

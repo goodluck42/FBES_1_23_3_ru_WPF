@@ -6,7 +6,14 @@ namespace CollectionControls;
 public record Vehicle : INotifyPropertyChanged
 {
     private string _name = null!;
-    public int Id { get; set; }
+    private string _model = null!;
+    private int _id;
+
+    public int Id
+    {
+        get => _id;
+        set => SetField(ref _id, value);
+    }
 
     public string Name
     {
@@ -14,8 +21,11 @@ public record Vehicle : INotifyPropertyChanged
         set => SetField(ref _name, value);
     }
 
-    public string Model { get; set; }  = null!;
-    
+    public string Model
+    {
+        get => _model;
+        set => SetField(ref _model, value);
+    }
     
     public event PropertyChangedEventHandler? PropertyChanged;
 
